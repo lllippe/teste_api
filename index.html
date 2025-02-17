@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro</title>
+    <!--script src="./js/externo.js" async="async"></script-->
+    <script>
+        window.onload = function(){
+            document.getElementById("lista").onclick=function(){
+                var carregaLista = new XMLHttpRequest();
+                carregaLista.onreadystatechange=function(){
+                    if(carregaLista.readyState==4){
+                        alert(carregaLista.status);
+                    }
+                }
+                carregaLista.open("GET","http://187.75.179.93:8000/", true);
+                carregaLista.setRequestHeader("access-control-allow-origin", "*");
+                carregaLista.setRequestHeader("access-control-allow-methods", "*");
+                carregaLista.setRequestHeader("access-control-allow-headers", "Content-Type");
+                carregaLista.send(null);
+            }
+        }
+        /*
+        var num1 = 15;
+        var num2 = 30;
+
+        document.write("<br>");
+        document.write(num1+num2);
+        document.write("<br>");
+        document.write("<br>");
+        document.write(num1-num2);
+        document.write("<br>");
+        document.write("<br>");
+        document.write(num1*num2);
+        document.write("<br>");
+        document.write("<br>");
+        document.write(num1/num2);
+        document.write("<br>");*/
+    </script>
+</body>
+</head>
+<body>
+    <input type="button" name="botao" id="lista" value="Carregar Lista">
+    <!--<h2>Exercicio</h2>
+    <p>Primeiro número: <input type="text" id="valor_um"></p>
+    <br><br>
+    <p>Segundo número: <input type="text" id="valor_dois"></p>
+    <br><br>
+    <div>
+        <input type="button" id="botao_somar" value="Somar">
+        <input type="button" id="botao_subtrair" value="Subtrair">
+        <input type="button" id="botao_multiplicar" value="Multiplicar">
+        <input type="button" id="botao_dividir" value="Dividir">
+        <input type="button" id="botao_um" value="Botão Um">
+        <input type="button" id="botao_dois" value="Botão Dois">
+    </div>
+    <hr>
+    <p id="resultado">Resultado da operação: </p>-->
+</body>
+</html>
